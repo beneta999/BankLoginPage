@@ -1,16 +1,12 @@
 //this program is designed for bank employees
 //Bank employees can login using their username and password
 //this code references a database which holds the bank employee information including username and password
-import java.awt.EventQueue;
-import java.awt.Image;
 import java.awt.*;
 import java.sql.*;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
-import java.awt.Font;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.ImageIcon;
@@ -19,8 +15,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JSeparator;
 import javax.swing.JPasswordField;
-import java.awt.Color;
-import javax.swing.JScrollPane;
+import java.awt.Window;
 
 public class MidtermProject {
 
@@ -109,11 +104,11 @@ public class MidtermProject {
 		txtUN.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Login");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btnNewButton.addActionListener(new ActionListener() { 
+			public void actionPerformed(ActionEvent e) { 
 				String UN = txtUN.getText();
-				String PW = txtPW.getText();
-				try {
+				String PW = txtPW.getText(); 
+				/**try {
 					Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 					Connection con=DriverManager.getConnection("jdbc:sqlserver://localhost:1433;integratedSecurity=true;");
 					Statement stmt=con.createStatement();
@@ -131,7 +126,7 @@ public class MidtermProject {
 					else 
 						JOptionPane.showMessageDialog(null, " Incorrect Username and Password.");
 					con.close();
-				}catch(Exception el) {System.out.print(e);}
+				}catch(Exception el) {System.out.print(e);} **/
 				
 			}
 			/*public void actionPerformed(ActionEvent e) {
@@ -175,6 +170,13 @@ public class MidtermProject {
 		panel.add(btnExit);
 		
 		JButton btnAboutUs = new JButton("About Us");
+		btnAboutUs.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//linking to AboutUs page
+				AboutUs au = new AboutUs();
+				frame.setVisible(true);
+			}
+		});
 		btnAboutUs.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnAboutUs.setBounds(484, 89, 169, 30);
 		panel.add(btnAboutUs);
@@ -185,6 +187,13 @@ public class MidtermProject {
 		panel.add(btnHelp);
 		
 		JButton btnForgotPassword = new JButton("Forgot Password");
+		btnForgotPassword.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//linking to the ForgotPassword page
+				ForgotPassword fp = new ForgotPassword();
+				frame.setVisible(true);
+			}
+		});
 		btnForgotPassword.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnForgotPassword.setBounds(463, 200, 190, 38);
 		panel.add(btnForgotPassword);
