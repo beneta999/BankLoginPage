@@ -108,7 +108,7 @@ public class MidtermProject {
 			public void actionPerformed(ActionEvent e) { 
 				String UN = txtUN.getText();
 				String PW = txtPW.getText(); 
-				/**try {
+				try {
 					Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 					Connection con=DriverManager.getConnection("jdbc:sqlserver://localhost:1433;integratedSecurity=true;");
 					Statement stmt=con.createStatement();
@@ -126,7 +126,7 @@ public class MidtermProject {
 					else 
 						JOptionPane.showMessageDialog(null, " Incorrect Username and Password.");
 					con.close();
-				}catch(Exception el) {System.out.print(e);} **/
+				}catch(Exception el) {System.out.print(e);}
 				
 			}
 			/*public void actionPerformed(ActionEvent e) {
