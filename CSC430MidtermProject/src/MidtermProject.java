@@ -108,7 +108,7 @@ public class MidtermProject {
 			public void actionPerformed(ActionEvent e) { 
 				String UN = txtUN.getText();
 				String PW = txtPW.getText(); 
-				try {
+				try { //not commented out
 					Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 					Connection con=DriverManager.getConnection("jdbc:sqlserver://localhost:1433;integratedSecurity=true;");
 					Statement stmt=con.createStatement();
@@ -129,6 +129,7 @@ public class MidtermProject {
 				}catch(Exception el) {System.out.print(e);}
 				
 			}
+
 			/*public void actionPerformed(ActionEvent e) {
 				if(txtUN.getText().isEmpty() || txtPW.getText().isEmpty()) {
 					JOptionPane.showMessageDialog(null, "Please Input Username and Password." + "!");
