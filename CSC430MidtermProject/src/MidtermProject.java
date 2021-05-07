@@ -184,6 +184,13 @@ public class MidtermProject {
 		panel.add(btnAboutUs);
 		
 		JButton btnHelp = new JButton("Help");
+		btnHelp.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//linking to the help page
+				HelpPage hp = new HelpPage();
+				frame.setVisible(true);
+			}
+		});
 		btnHelp.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnHelp.setBounds(484, 143, 169, 30);
 		panel.add(btnHelp);
