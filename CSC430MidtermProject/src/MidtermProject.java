@@ -107,8 +107,9 @@ public class MidtermProject {
 		btnNewButton.addActionListener(new ActionListener() { 
 			public void actionPerformed(ActionEvent e) { 
 				String UN = txtUN.getText();
-				String PW = txtPW.getText(); 
-				try { //not commented out
+				String PW = txtPW.getText();
+				//made changes in this section
+				try { 
 					Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 					Connection con=DriverManager.getConnection("jdbc:sqlserver://localhost:1433;integratedSecurity=true;");
 					Statement stmt=con.createStatement();
